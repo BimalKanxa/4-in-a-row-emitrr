@@ -1,0 +1,8 @@
+CREATE TABLE IF NOT EXISTS games (
+  id UUID PRIMARY KEY,
+  player1 VARCHAR(100),
+  player2 VARCHAR(100),
+  winner VARCHAR(100),
+  duration INTEGER,
+  created_at TIMESTAMP DEFAULT CURRENT_TIMESTAMP
+);
