@@ -76,6 +76,17 @@ The backend emits game lifecycle events (GAME_STARTED, MOVE_PLAYED, GAME_ENDED, 
 A separate consumer processes these events asynchronously to compute analytics such as average game duration and most frequent winners.
 Kafka is configured locally using Docker (Zookeeper + Kafka) to demonstrate a production-style, event-driven architecture.
 
+Kafka is configured locally using Docker to demonstrate an event-driven analytics pipeline.
+In production deployment (Render), Kafka is intentionally disabled to avoid tight coupling and external broker dependencies.
+
+
+
+
+
+
+
+
+
 
 🎯 4 in a Row – Real-Time Multiplayer Game (Backend Heavy)
 
