@@ -30,8 +30,17 @@ async function getLeaderboard() {
     ORDER BY wins DESC
   `;
 
-  const { rows } = await db.query(query);
-  return rows;
+  // const { rows } = await db.query(query);
+  try {
+    const { rows } = await db.query(query);
+    // Return rows if they exist, otherwise return an empty array
+    return rows || []; 
+  } catch (error) {
+    console.error("Error fetching leaderboard:", error);
+    // Return empty array on error so the frontend doesn't break
+    return [];
+  }
+  // return rows;
 }
 
 module.exports = {
